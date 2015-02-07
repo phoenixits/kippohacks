@@ -1,5 +1,6 @@
 <?php
-$log = "/kippo/data/lastlog.txt"; // modify this to your system
+$log = "/kippo/data/lastlog.txt"; // edit path location
+$malware = "/kippo/kippo/dl/"; // edit path location
 $linecount = 0;
 $handle = fopen($log, "r");
 while(!feof($handle)){
@@ -13,5 +14,8 @@ $log = escapeshellarg($log);
 $line = `tail -n 1 $log`;
 $strip = array("root", "pts/0", $line);
 $line = str_replace($strip, "", $line);
-echo "$line";
+echo "$line<br>";
+$download = `tree $malware | grep "files"`;
+echo "<b>Malware Downloaded:</b>&nbsp;";
+echo "$download";
 ?>
