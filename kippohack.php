@@ -8,8 +8,7 @@ while(!feof($handle)){
 }
 fclose($handle);
 echo "<b>Hacking Attempts:</b> $linecount<br>";
-echo "<b>Breaches:</b> 0<br>";
-        echo "<b>Last:</b>&nbsp;";
+echo "<b>Last:</b>&nbsp;";
 $log = escapeshellarg($log);
 $line = `tail -n 1 $log`;
 $strip = array("root", "pts/0", $line);
