@@ -1,6 +1,6 @@
 <?php
 $log = "/kippo/data/lastlog.txt"; // edit path location
-$malware = "/kippo/kippo/dl/"; // edit path location
+$malware = "/kippo/dl/"; // edit path location
 $linecount = 0;
 $handle = fopen($log, "r");
 while(!feof($handle)){
