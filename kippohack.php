@@ -8,7 +8,7 @@ while(!feof($handle)){
    $linecount++;
 }
 fclose($handle);
-$unique = `grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" $log | uniq | wc -l`;
+$unique = `cat $log | sort | uniq | wc -l`;
 echo "<b>Total Attempts:</b> $linecount<br>";
 echo "<b>Unique Attempts:</b> $unique<br>";
 echo "<b>Last:</b>&nbsp;";
