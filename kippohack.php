@@ -18,6 +18,8 @@ $strip = array("root", "pts/0", $line);
 $line = str_replace($strip, "", $line);
 echo "$line<br>";
 $download = `tree $malware | grep "files"`;
+$dlstrip = array("0 directories,", $download);
+$download = str_replace($dlstrip, "", $download);
 echo "<b>Malware Downloaded:</b>&nbsp;";
 echo "$download";
 ?>
